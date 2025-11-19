@@ -19,8 +19,8 @@ public class StudentService {
         repo.save(s);
     }
     public Student getStudent(int id) throws SQLException {
-//        return repo.get(id);
-        return new Student();
+        return repo.get(id);
+
     }
     public List<Student> getAllStudents() throws SQLException {
 //        return repo.getAll();
