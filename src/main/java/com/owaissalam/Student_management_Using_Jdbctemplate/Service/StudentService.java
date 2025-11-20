@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -23,16 +22,15 @@ public class StudentService {
 
     }
     public List<Student> getAllStudents() throws SQLException {
-//        return repo.getAll();
-        return new ArrayList<>();
+        return repo.getAll();
     }
     public void removeStudent(int id) throws SQLException {
-//        repo.delete(id);
+        repo.delete(id);
     }
     public void updateMarks(int id, int newMarks) throws SQLException {
-//        repo.updateMarks(id, newMarks);
+        repo.updateMarks(id, newMarks);
     }
     public void changeName(int id, String newName) throws SQLException {
-//        repo.updateName(id, newName);
+        repo.updateName(id, newName);
     }
 }

@@ -1,6 +1,5 @@
 package com.owaissalam.Student_management_Using_Jdbctemplate.Repository;
 
-import ch.qos.logback.classic.boolex.StubEventEvaluator;
 import com.owaissalam.Student_management_Using_Jdbctemplate.Model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -8,8 +7,6 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -41,5 +38,26 @@ public class StudentRepo {
         return jdbc.queryForObject(sql, new Object[]{id}, mapper());
     }
 
+    public List<Student> getAll(){
+        String sql = "select * from student";
+        return jdbc.query(sql, mapper());
+    }
 
+    public void delete(int id) {
+        String sql = "delete from student where id=?";
+        int ans = jdbc.update(sql, id);
+        if (ans > 0) System.out.println("deleted from db");
+    }
+
+    public void updateMarks(int id, int newMarks) {
+        String sql = "update student set marks=? where id=?";
+        int ans = jdbc.update(sql, newMarks, id);
+        if (ans > 0) System.out.println("updated marks");
+    }
+
+    public void updateName(int id, String newName) {
+        String sql = "update student set name=? where id=?";
+        int ans = jdbc.update(sql, newName, id);
+        if (ans > 0) System.out.println("Added to db");
+    }
 }

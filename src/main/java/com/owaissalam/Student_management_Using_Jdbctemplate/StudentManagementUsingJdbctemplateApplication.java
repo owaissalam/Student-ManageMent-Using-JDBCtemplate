@@ -16,7 +16,6 @@ public class StudentManagementUsingJdbctemplateApplication {
 
         appMenu menu = new appMenu(service);
         menu.start();
-//        System.out.println("Hello Owais");
 	}
 
 }
