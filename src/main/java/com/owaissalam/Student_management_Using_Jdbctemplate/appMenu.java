@@ -82,6 +82,6 @@ public class appMenu {
         System.out.println("Enter student id : ");
         int id = sc.nextInt();
 
-        service.removeStudent(id);
+        service.deleteStudent(id);
     }
 }

@@ -24,7 +24,7 @@ public class StudentService {
     public List<Student> getAllStudents() throws SQLException {
         return repo.getAll();
     }
-    public void removeStudent(int id) throws SQLException {
+    public void deleteStudent(int id) throws SQLException {
         repo.delete(id);
     }
     public void updateMarks(int id, int newMarks) throws SQLException {
